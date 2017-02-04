@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>bf2a034c-9d80-4a80-9656-b49458af588b</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TransportApi.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITokenComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransportApiComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\GeoJsonType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Profile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\LegType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\TimeType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\TransitMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\InputModels\JourneyInputModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\InputModels\JourneyOmitInputModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\InputModels\JourneyOnlyInputModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Agency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Cost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Direction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Distance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Fare.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareProduct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareTableEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonLineString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonPoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Itinerary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Journey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Leg.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Line.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\LineShape.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\LineTimetable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Location.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Route.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Segment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Shape.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Stop.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\StopTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\StopTimetable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\TransportApiResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\TripTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Vehicle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Waypoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AbstractTransportApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Zone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransportApiClientConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransportApiClientSettings.cs" />
+  </ItemGroup>
+</Project>

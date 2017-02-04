@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://www.whereismytransport.com</licenseUrl>
+    <projectUrl>http://www.whereismytransport.com</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/14315660</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>transport transit</tags>
+  </metadata>
+</package>
