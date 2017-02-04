@@ -1,5 +1,4 @@
-# TransportApiSdk.NET
-iOS SDK for the WhereIsMyTransport Transport API.
+# TransportApiSdk - WhereIsMyTransport API Client Library for .NET
 
 The unofficial .NET SDK for the [WhereIsMyTransport](https://www.whereismytransport.com) API. 
 
