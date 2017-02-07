@@ -31,7 +31,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetStopsAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetStopsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultAt);
+            var results = await defaultClient.GetStopsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -40,7 +40,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetStopsNearbyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetStopsNearbyAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultAt, defaultLatitude, defaultLongitude);
+            var results = await defaultClient.GetStopsNearbyAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultLatitude, defaultLongitude);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -49,7 +49,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetStopsByBoundingBoxAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetStopsByBoundingBoxAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultAt, defaultBoundingBox);
+            var results = await defaultClient.GetStopsByBoundingBoxAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultBoundingBox);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -58,7 +58,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetStopsWithChildrenAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetStopsAsync(defaultCancellationToken, new List<string>() { defaultGautrainAgencyId }, defaultExcludeAgencies, new List<TransportMode>() { TransportMode.Rail }, defaultServesLines, defaultAt, showChildren: true);
+            var results = await defaultClient.GetStopsAsync(defaultCancellationToken, new List<string>() { defaultGautrainAgencyId }, defaultExcludeAgencies, new List<TransportMode>() { TransportMode.Rail }, defaultServesLines, showChildren: true);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -67,14 +67,14 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetStopAsync_ValidInputs_IsSuccess()
         {
-            var allStops = await defaultClient.GetStopsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultAt);
+            var allStops = await defaultClient.GetStopsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines);
 
             Assert.IsTrue(allStops.IsSuccess);
             Assert.IsNotNull(allStops.Data);
 
             if (allStops.IsSuccess && allStops.Data != null)
             {
-                var results = await defaultClient.GetStopAsync(defaultCancellationToken, allStops.Data.First().Id, defaultAt);
+                var results = await defaultClient.GetStopAsync(defaultCancellationToken, allStops.Data.First().Id);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);
@@ -85,19 +85,19 @@ namespace TransportApi.Sdk.UnitTests
         public async Task GetStopChildrenAsync_ValidInputs_IsSuccess()
         {
             var allStops = await defaultClient.GetStopsAsync(
-                defaultCancellationToken, 
-                new List<string>() { defaultGautrainAgencyId }, 
-                defaultExcludeAgencies, 
-                new List<TransportMode>() { TransportMode.Rail }, 
-                defaultServesLines, 
-                defaultAt);
+                defaultCancellationToken,
+                new List<string>() { defaultGautrainAgencyId },
+                defaultExcludeAgencies,
+                new List<TransportMode>() { TransportMode.Rail },
+                defaultServesLines
+                );
 
             Assert.IsTrue(allStops.IsSuccess);
             Assert.IsNotNull(allStops.Data);
 
             if (allStops.IsSuccess && allStops.Data != null)
             {
-                var results = await defaultClient.GetChildStopsAsync(defaultCancellationToken, allStops.Data.First(x => x.Name == "Midrand").Id, defaultAt);
+                var results = await defaultClient.GetChildStopsAsync(defaultCancellationToken, allStops.Data.First(x => x.Name == "Midrand").Id);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);

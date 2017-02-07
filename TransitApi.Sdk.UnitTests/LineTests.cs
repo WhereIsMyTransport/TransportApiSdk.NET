@@ -27,7 +27,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetLinesAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops, defaultAt);
+            var results = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -36,14 +36,14 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetLineAsync_ValidInputs_IsSuccess()
         {
-            var allLines = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops, defaultAt);
+            var allLines = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops);
 
             Assert.IsTrue(allLines.IsSuccess);
             Assert.IsNotNull(allLines.Data);
 
             if (allLines.IsSuccess && allLines.Data != null)
             {
-                var results = await defaultClient.GetLineAsync(defaultCancellationToken, allLines.Data.First().Id, defaultAt);
+                var results = await defaultClient.GetLineAsync(defaultCancellationToken, allLines.Data.First().Id);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);

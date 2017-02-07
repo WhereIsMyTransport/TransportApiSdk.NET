@@ -27,14 +27,14 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetRoutesByLineAsync_ValidInputs_IsSuccess()
         {
-            var allLines = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops, defaultAt);
+            var allLines = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops);
 
             Assert.IsTrue(allLines.IsSuccess);
             Assert.IsNotNull(allLines.Data);
 
             if (allLines.IsSuccess && allLines.Data != null)
             {
-                var results = await defaultClient.GetRoutesByLineAsync(defaultCancellationToken, "0503e0b5-49bd-443c-83b5-0556d8187e51", allLines.Data.First().Id, defaultAt);
+                var results = await defaultClient.GetRoutesByLineAsync(defaultCancellationToken, "0503e0b5-49bd-443c-83b5-0556d8187e51", allLines.Data.First().Id);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);

@@ -26,7 +26,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetFareProductsAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetFareProductsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultAt);
+            var results = await defaultClient.GetFareProductsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -40,11 +40,11 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                 defaultGautrainAgencyId
             };
 
-            var gautrainFareProducts = await defaultClient.GetFareProductsAsync(defaultCancellationToken, limitAgencyToGautrain, defaultExcludeAgencies, defaultAt);
+            var gautrainFareProducts = await defaultClient.GetFareProductsAsync(defaultCancellationToken, limitAgencyToGautrain, defaultExcludeAgencies);
 
             var defaultProduct = gautrainFareProducts.Data.Single(x => x.IsDefault);
 
-            var results = await defaultClient.GetFareTablesAsync(defaultCancellationToken, defaultProduct.Id, defaultAt);
+            var results = await defaultClient.GetFareTablesAsync(defaultCancellationToken, defaultProduct.Id);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);

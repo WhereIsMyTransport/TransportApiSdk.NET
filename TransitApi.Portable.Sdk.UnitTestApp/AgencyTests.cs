@@ -28,7 +28,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetAgenciesAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetAgenciesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultAt);
+            var results = await defaultClient.GetAgenciesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies);
 
             Assert.IsTrue(results.IsSuccess);
         }
@@ -36,15 +36,15 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetAgenciesNearbyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetAgenciesNearbyAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultAt, defaultLatitude, defaultLongitude);
-            
+            var results = await defaultClient.GetAgenciesNearbyAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultLatitude, defaultLongitude);
+
             Assert.IsTrue(results.IsSuccess);
         }
 
         [TestMethod]
         public async Task GetAgenciesByBoundingBoxAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetAgenciesByBoundingBoxAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultAt, defaultBoundingBox);
+            var results = await defaultClient.GetAgenciesByBoundingBoxAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultBoundingBox);
 
             Assert.IsTrue(results.IsSuccess);
         }
@@ -52,7 +52,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetAgencyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetAgencyAsync(defaultCancellationToken, defaultGautrainAgencyId, defaultAt);
+            var results = await defaultClient.GetAgencyAsync(defaultCancellationToken, defaultGautrainAgencyId);
 
             Assert.IsTrue(results.IsSuccess);
         }

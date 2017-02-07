@@ -29,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareTableEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonLineString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonPoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Hail.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Itinerary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Journey.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Leg.cs" />

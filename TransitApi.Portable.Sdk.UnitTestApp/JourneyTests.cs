@@ -36,7 +36,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task PostJourneyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies,  defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, timeType, profile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, timeType, profile);
 
             Assert.IsTrue(results.IsSuccess);
         }
@@ -66,7 +66,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, limitGautrain, defaultOmitAgencies,  defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, timeType, profile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, limitGautrain, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, timeType, profile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -108,7 +108,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var fareProducts = await defaultClient.GetFareProductsAsync(defaultCancellationToken, limitGautrain, defaultOmitAgencies, defaultAt);
+            var fareProducts = await defaultClient.GetFareProductsAsync(defaultCancellationToken, limitGautrain, defaultOmitAgencies);
 
             Assert.IsTrue(fareProducts.IsSuccess);
             Assert.IsNotNull(fareProducts.Data);

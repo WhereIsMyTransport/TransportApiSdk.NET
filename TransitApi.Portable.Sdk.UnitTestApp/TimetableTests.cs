@@ -31,18 +31,18 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         private static IEnumerable<TransportMode> defaultModes = null;
         private static IEnumerable<string> defaultServesStops = null;
         private static IEnumerable<string> defaultServesLines = null;
-        
+
         [TestMethod]
         public async Task GetStopTimetableAsync_ValidInputs_IsSuccess()
         {
-            var allStops = await defaultClient.GetStopsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultAt);
+            var allStops = await defaultClient.GetStopsAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines);
 
             Assert.IsTrue(allStops.IsSuccess);
             Assert.IsNotNull(allStops.Data);
 
             if (allStops.IsSuccess && allStops.Data != null)
             {
-                var results = await defaultClient.GetStopTimetableAsync(defaultCancellationToken, allStops.Data.First().Id, defaultEarliestArrivalTime, defaultLatestArrivalTime, defaultAt);
+                var results = await defaultClient.GetStopTimetableAsync(defaultCancellationToken, allStops.Data.First().Id, defaultEarliestArrivalTime, defaultLatestArrivalTime);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);
@@ -52,14 +52,14 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetLineTimetableAsync_ValidInputs_IsSuccess()
         {
-            var allLines = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops, defaultAt);
+            var allLines = await defaultClient.GetLinesAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesStops);
 
             Assert.IsTrue(allLines.IsSuccess);
             Assert.IsNotNull(allLines.Data);
 
             if (allLines.IsSuccess && allLines.Data != null)
             {
-                var results = await defaultClient.GetLineTimetableAsync(defaultCancellationToken, allLines.Data.First().Id, defaultDepartureStopId, defaultArrivalStopId, defaultEarliestDepartureTime, defaultLatestDepartureTime, defaultAt);
+                var results = await defaultClient.GetLineTimetableAsync(defaultCancellationToken, allLines.Data.First().Id, defaultDepartureStopId, defaultArrivalStopId, defaultEarliestDepartureTime, defaultLatestDepartureTime);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);

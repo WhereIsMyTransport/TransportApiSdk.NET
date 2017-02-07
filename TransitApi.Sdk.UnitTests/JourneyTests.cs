@@ -42,10 +42,12 @@ namespace TransportApi.Sdk.UnitTests
         private static double defaultEndLatitude = -26.1311567947268;
         private static double defaultEndLongitude = 28.2292649243027;
 
+        private static string exlude = "geometry";
+
         [TestMethod]
         public async Task PostJourneyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile, exclude: exlude);
 
             Assert.IsTrue(results.IsSuccess);
         }
@@ -109,7 +111,7 @@ namespace TransportApi.Sdk.UnitTests
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var fareProducts = await defaultClient.GetFareProductsAsync(defaultCancellationToken, limitGautrain, defaultOmitAgencies, defaultAt);
+            var fareProducts = await defaultClient.GetFareProductsAsync(defaultCancellationToken, limitGautrain, defaultOmitAgencies);
 
             Assert.IsTrue(fareProducts.IsSuccess);
             Assert.IsNotNull(fareProducts.Data);
