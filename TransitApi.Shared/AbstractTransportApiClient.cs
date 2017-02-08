@@ -38,7 +38,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgenciesNearbyAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, double latitude, double longitude, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgenciesNearbyAsync(CancellationToken ct, double latitude, double longitude, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetAgencies(tokenComponent, settings, ct, onlyAgencies, omitAgencies, null, latitude, longitude, string.Empty, radiusInMeters, limit, offset, exclude);
         }
@@ -53,7 +53,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgenciesAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgenciesAsync(CancellationToken ct, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetAgencies(tokenComponent, settings, ct, onlyAgencies, omitAgencies, null, double.NaN, double.NaN, string.Empty, limit: limit, offset: offset, exclude: exclude);
         }
@@ -68,7 +68,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgenciesByBoundingBoxAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, string boundingBox, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgenciesByBoundingBoxAsync(CancellationToken ct, string boundingBox, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetAgencies(tokenComponent, settings, ct, onlyAgencies, omitAgencies, null, double.NaN, double.NaN, boundingBox, limit: limit, offset: offset, exclude: exclude);
         }
@@ -101,7 +101,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Stop>>> GetStopsNearbyAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> limitModes, IEnumerable<string> servesLines, double latitude, double longitude, bool showChildren = false, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Stop>>> GetStopsNearbyAsync(CancellationToken ct, double latitude, double longitude, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> limitModes = null, IEnumerable<string> servesLines = null, bool showChildren = false, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetStops(tokenComponent, settings, ct, onlyAgencies, omitAgencies, limitModes, servesLines, null, latitude, longitude, string.Empty, showChildren, radiusInMeters, limit, offset, exclude);
         }
@@ -118,7 +118,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Stop>>> GetStopsAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> limitModes, IEnumerable<string> servesLines, bool showChildren = false, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Stop>>> GetStopsAsync(CancellationToken ct, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> limitModes = null, IEnumerable<string> servesLines = null, bool showChildren = false, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetStops(tokenComponent, settings, ct, onlyAgencies, omitAgencies, limitModes, servesLines, null, double.NaN, double.NaN, string.Empty, showChildren: showChildren, limit: limit, offset: offset, exclude: exclude);
         }
@@ -136,7 +136,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Stop>>> GetStopsByBoundingBoxAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> limitModes, IEnumerable<string> servesLines, string boundingBox, bool showChildren = false, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Stop>>> GetStopsByBoundingBoxAsync(CancellationToken ct, string boundingBox, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> limitModes = null, IEnumerable<string> servesLines = null, bool showChildren = false, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetStops(tokenComponent, settings, ct, onlyAgencies, omitAgencies, limitModes, servesLines, null, double.NaN, double.NaN, boundingBox, showChildren: showChildren, limit: limit, offset: offset, exclude: exclude);
         }
@@ -178,7 +178,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Line>>> GetLinesAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> limitModes, IEnumerable<string> servesStops, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Line>>> GetLinesAsync(CancellationToken ct, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> limitModes = null, IEnumerable<string> servesStops = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetLines(tokenComponent, settings, ct, onlyAgencies, omitAgencies, limitModes, servesStops, null, string.Empty, double.NaN, double.NaN, limit: limit, offset: offset, exclude: exclude);
         }
@@ -194,7 +194,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Line>>> GetLinesNearbyAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> limitModes, IEnumerable<string> servesStops, double latitude, double longitude, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Line>>> GetLinesNearbyAsync(CancellationToken ct, double latitude, double longitude, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> limitModes = null, IEnumerable<string> servesStops = null, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetLines(tokenComponent, settings, ct, onlyAgencies, omitAgencies, limitModes, servesStops, null, string.Empty, latitude, longitude, radiusInMeters: radiusInMeters, limit: limit, offset: offset, exclude: exclude);
         }
@@ -211,7 +211,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Line>>> GetLinesByBoundingBoxAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> limitModes, IEnumerable<string> servesStops, string boundingBox, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Line>>> GetLinesByBoundingBoxAsync(CancellationToken ct, string boundingBox, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> limitModes = null, IEnumerable<string> servesStops = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetLines(tokenComponent, settings, ct, onlyAgencies, omitAgencies, limitModes, servesStops, null, boundingBox, double.NaN, double.NaN, limit: limit, offset: offset, exclude: exclude);
         }
@@ -242,7 +242,7 @@ namespace TransportApi.Sdk
         /// <param name="latestArrivalTime">Optional latest desired arrival date and time for the journey.</param>
         /// <param name="maxItineraries">Optional maximum number of itineraries to return. Valid values: 1 - 5.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<Journey>> PostJourneyAsync(CancellationToken ct, IEnumerable<string> fareProducts, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> onlyModes, IEnumerable<TransportMode> omitModes, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time, TimeType timeType = TimeType.DepartAfter, Profile profile = Profile.ClosestToTime, int maxItineraries = 3, string exclude = null)
+        public async Task<TransportApiResult<Journey>> PostJourneyAsync(CancellationToken ct, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time = null, IEnumerable<string> fareProducts = null, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> onlyModes = null, IEnumerable<TransportMode> omitModes = null, TimeType timeType = TimeType.DepartAfter, Profile profile = Profile.ClosestToTime, int maxItineraries = 3, string exclude = null)
         {
             return await transitApiComponent.PostJourney(tokenComponent, settings, ct, fareProducts, onlyAgencies, omitAgencies, onlyModes, omitModes, startLatitude, startLongitude, endLatitude, endLongitude, time, timeType, profile, maxItineraries, exclude);
         }
@@ -261,7 +261,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetableAsync(CancellationToken ct, string id, DateTime? earliestArrivalTime, DateTime? latestArrivalTime, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetableAsync(CancellationToken ct, string id, DateTime? earliestArrivalTime = null, DateTime? latestArrivalTime = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetStopTimetable(tokenComponent, settings, ct, id, earliestArrivalTime, latestArrivalTime, null, limit: limit, offset: offset, exclude: exclude);
         }
@@ -278,7 +278,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<LineTimetable>>> GetLineTimetableAsync(CancellationToken ct, string id, string departureStopIdFilter, string arrivalStopIdFilter, DateTime? earliestDepartureTime, DateTime? latestDepartureTime, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<LineTimetable>>> GetLineTimetableAsync(CancellationToken ct, string id, string departureStopIdFilter = null, string arrivalStopIdFilter = null, DateTime? earliestDepartureTime = null, DateTime? latestDepartureTime = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetLineTimetable(tokenComponent, settings, ct, id, departureStopIdFilter, arrivalStopIdFilter, earliestDepartureTime, latestDepartureTime, null, limit: limit, offset: offset, exclude: exclude);
         }
@@ -305,13 +305,12 @@ namespace TransportApi.Sdk
         /// <summary>
         /// (EXPERIMENTAL FEATURE) Retrieves the routes for a line.
         /// </summary>
-        /// <param name="experimentalPassPhrase">A unique key to gain access to this feature.</param>
         /// <param name="id">Id of the Line.</param>
         /// <param name="at">Optional point in time from which to query. Defaults to the current date and time.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Route>>> GetRoutesByLineAsync(CancellationToken ct, string experimentalPassPhrase, string id, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Route>>> GetRoutesByLineAsync(CancellationToken ct, string id, string exclude = null)
         {
-            return await transitApiComponent.GetRoutesByLine(tokenComponent, settings, ct, experimentalPassPhrase, id, null, exclude);
+            return await transitApiComponent.GetRoutesByLine(tokenComponent, settings, ct, id, null, exclude);
         }
 
         #endregion
@@ -327,7 +326,7 @@ namespace TransportApi.Sdk
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<FareProduct>>> GetFareProductsAsync(CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<FareProduct>>> GetFareProductsAsync(CancellationToken ct, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, int limit = 100, int offset = 0, string exclude = null)
         {
             return await transitApiComponent.GetFareProducts(tokenComponent, settings, ct, onlyAgencies, omitAgencies, null, limit, offset, exclude);
         }

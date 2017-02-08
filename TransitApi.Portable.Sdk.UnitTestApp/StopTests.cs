@@ -41,7 +41,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetStopsNearbyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetStopsNearbyAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultLatitude, defaultLongitude);
+            var results = await defaultClient.GetStopsNearbyAsync(defaultCancellationToken, defaultLatitude, defaultLongitude, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -50,7 +50,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task GetStopsByBoundingBoxAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetStopsByBoundingBoxAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines, defaultBoundingBox);
+            var results = await defaultClient.GetStopsByBoundingBoxAsync(defaultCancellationToken, defaultBoundingBox, defaultLimitAgencies, defaultExcludeAgencies, defaultModes, defaultServesLines);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);

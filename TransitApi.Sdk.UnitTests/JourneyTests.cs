@@ -47,7 +47,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task PostJourneyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile, exclude: exlude);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile, exclude: exlude);
 
             Assert.IsTrue(results.IsSuccess);
         }
@@ -60,7 +60,7 @@ namespace TransportApi.Sdk.UnitTests
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, excludeGautrain, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultFareProducts, defaultOnlyAgencies, excludeGautrain, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -77,7 +77,7 @@ namespace TransportApi.Sdk.UnitTests
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, limitGautrain, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultFareProducts, limitGautrain, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -94,7 +94,7 @@ namespace TransportApi.Sdk.UnitTests
                 TransportMode.Rail
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, noRailMode, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, noRailMode, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -123,7 +123,7 @@ namespace TransportApi.Sdk.UnitTests
                     fareProducts.Data.First(x => x.IsDefault == false).Id
                 };
 
-                var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, nonDefaultFareProduct, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultTimeType, defaultProfile);
+                var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, nonDefaultFareProduct, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
                 Assert.IsTrue(results.IsSuccess);
             }

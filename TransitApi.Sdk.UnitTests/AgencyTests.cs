@@ -37,7 +37,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetAgenciesNearbyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetAgenciesNearbyAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultLatitude, defaultLongitude);
+            var results = await defaultClient.GetAgenciesNearbyAsync(defaultCancellationToken, defaultLatitude, defaultLongitude, defaultLimitAgencies, defaultExcludeAgencies);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
@@ -46,7 +46,7 @@ namespace TransportApi.Sdk.UnitTests
         [TestMethod]
         public async Task GetAgenciesByBoundingBoxAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.GetAgenciesByBoundingBoxAsync(defaultCancellationToken, defaultLimitAgencies, defaultExcludeAgencies, defaultBoundingBox);
+            var results = await defaultClient.GetAgenciesByBoundingBoxAsync(defaultCancellationToken, defaultBoundingBox, defaultLimitAgencies, defaultExcludeAgencies);
 
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);

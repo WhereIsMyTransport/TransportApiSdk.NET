@@ -882,16 +882,9 @@ namespace TransportApi.Sdk.Components
             return result;
         }
 
-        public async Task<TransportApiResult<IEnumerable<Route>>> GetRoutesByLine(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string experimentalPassPhrase, string id, DateTime? at, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<Route>>> GetRoutesByLine(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null)
         {
             var result = new TransportApiResult<IEnumerable<Route>>();
-
-            if (experimentalPassPhrase != "0503e0b5-49bd-443c-83b5-0556d8187e51")
-            {
-                result.Error = "Incorrect pass phrase. This feature is currently only for internal access.";
-
-                return result;
-            }
 
             if (string.IsNullOrWhiteSpace(id))
             {
