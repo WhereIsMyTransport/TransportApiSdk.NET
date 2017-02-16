@@ -25,20 +25,34 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         private static IEnumerable<TransportMode> defaultOnlyModes = null;
         private static IEnumerable<TransportMode> defaultOmitModes = null;
         private static DateTime? time = DateTime.Now;
-        private static TimeType timeType = TimeType.DepartAfter;
-        private static Profile profile = Profile.ClosestToTime;
+        private static DateTime? defaultTime = DateTime.UtcNow.AddHours(16);
+        private static TimeType defaultTimeType = TimeType.DepartAfter;
+        private static Profile defaultProfile = Profile.ClosestToTime;
         private static double defaultStartLatitude = -25.747562;
         private static double defaultStartLongitude = 28.236323;
         private static double defaultEndLatitude = -26.195135;
         private static double defaultEndLongitude = 28.036299;
         private static DateTime? defaultAt = null;
 
+        private static string exlude = "geometry";
+
         [TestMethod]
         public async Task PostJourneyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, timeType, profile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
+        }
+
+        [TestMethod]
+        public async Task GetJourneyAsync_ValidInputs_IsSuccess()
+        {
+            var journey = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile, exclude: exlude);
+
+            var results = await defaultClient.GetJourneyAsync(defaultCancellationToken, journey.Data.Id);
+
+            Assert.IsTrue(results.IsSuccess);
+            Assert.IsNotNull(results.Data);
         }
 
         [TestMethod]
@@ -49,7 +63,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, excludeGautrain, defaultOnlyModes, defaultOmitModes, timeType, profile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, excludeGautrain, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -66,7 +80,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                 "edObkk6o-0WN3tNZBLqKPg"
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, limitGautrain, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, timeType, profile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, limitGautrain, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -91,7 +105,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                 TransportMode.Subway
             };
 
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, noRailMode, defaultOmitModes, timeType, profile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, noRailMode, defaultOmitModes, defaultTimeType, defaultProfile);
 
             Assert.IsTrue(results.IsSuccess);
 
@@ -120,7 +134,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
                     fareProducts.Data.First(x => x.IsDefault == false).Id
                 };
 
-                var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, nonDefaultFareProduct, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, timeType, profile);
+                var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, nonDefaultFareProduct, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
 
                 Assert.IsTrue(results.IsSuccess);
             }

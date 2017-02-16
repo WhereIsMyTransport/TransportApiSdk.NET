@@ -53,6 +53,17 @@ namespace TransportApi.Sdk.UnitTests
         }
 
         [TestMethod]
+        public async Task GetJourneyAsync_ValidInputs_IsSuccess()
+        {
+            var journey = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, defaultTime, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile, exclude: exlude);
+
+            var results = await defaultClient.GetJourneyAsync(defaultCancellationToken, journey.Data.Id);
+
+            Assert.IsTrue(results.IsSuccess);
+            Assert.IsNotNull(results.Data);
+        }
+
+        [TestMethod]
         public async Task PostJourneyAsync_ExcludeAgency_IsSuccess()
         {
             IEnumerable<string> excludeGautrain = new List<string>()

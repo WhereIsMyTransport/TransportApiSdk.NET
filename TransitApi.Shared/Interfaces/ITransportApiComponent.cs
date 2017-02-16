@@ -11,6 +11,8 @@ namespace TransportApi.Sdk.Interfaces
     {
         Task<TransportApiResult<Journey>> PostJourney(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> fareProducts, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> onlyModes, IEnumerable<TransportMode> omitModes, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time, TimeType timeType = TimeType.DepartAfter, Profile profile = Profile.ClosestToTime, int maxItineraries = 3, string exclude = null);
 
+        Task<TransportApiResult<Journey>> GetJourney(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null);
+
         Task<TransportApiResult<IEnumerable<Agency>>> GetAgencies(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, DateTime? at, double latitude, double longitude, string boundingBox, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null);
 
         Task<TransportApiResult<Agency>> GetAgency(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null);

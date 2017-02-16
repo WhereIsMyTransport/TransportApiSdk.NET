@@ -247,6 +247,17 @@ namespace TransportApi.Sdk
             return await transitApiComponent.PostJourney(tokenComponent, settings, ct, fareProducts, onlyAgencies, omitAgencies, onlyModes, omitModes, startLatitude, startLongitude, endLatitude, endLongitude, time, timeType, profile, maxItineraries, exclude);
         }
 
+        /// <summary>
+        /// Gets the details of an Journey previously requested through the POST journey call.
+        /// </summary>
+        /// <param name="id">Id of the Journey to get.</param>
+        /// <param name="at">Optional point in time from which to query. Defaults to the current date and time.</param>
+        /// <returns></returns>
+        public async Task<TransportApiResult<Journey>> GetJourneyAsync(CancellationToken ct, string id, string exclude = null)
+        {
+            return await transitApiComponent.GetJourney(tokenComponent, settings, ct, id, null, exclude);
+        }
+
         #endregion
 
         #region Timetables

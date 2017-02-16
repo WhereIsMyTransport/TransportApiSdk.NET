@@ -108,6 +108,63 @@ namespace TransportApi.Sdk.Components
             return result;
         }
 
+        public async Task<TransportApiResult<Journey>> GetJourney(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null)
+        {
+            var result = new TransportApiResult<Journey>();
+
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                result.Error = "Journey Id is required.";
+
+                return result;
+            }
+
+            var token = await tokenComponent.GetAccessToken();
+
+            if (token == null)
+            {
+                result.Error = tokenComponent.DefaultErrorMessage;
+
+                return result;
+            }
+
+            var client = Client(settings.Timeout);
+
+            var request = GetRequest($"journeys/{id}", token);
+
+            if (at != null)
+            {
+                request.AddParameter("at", at.Value.ToString("o"));
+            }
+            if (!string.IsNullOrWhiteSpace(exclude))
+            {
+                request.AddParameter("exclude", exclude);
+            }
+
+            try
+            {
+                IRestResponse<Journey> restResponse = await client.ExecuteTaskAsync<Journey>(request, ct);
+
+                result.StatusCode = restResponse.StatusCode;
+
+                if (restResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    result.IsSuccess = true;
+                    result.Data = restResponse.Data;
+                }
+                else
+                {
+                    result.Error = ((RestResponse)restResponse).Content;
+                }
+            }
+            catch (Exception e)
+            {
+                result.Error = e.Message;
+            }
+
+            return result;
+        }
+
         public async Task<TransportApiResult<IEnumerable<Agency>>> GetAgencies(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, DateTime? at, double latitude, double longitude, string boundingBox, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null)
         {
             var result = new TransportApiResult<IEnumerable<Agency>>();
