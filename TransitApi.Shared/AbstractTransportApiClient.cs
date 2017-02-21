@@ -10,6 +10,9 @@ namespace TransportApi.Sdk
 {
     public abstract class AbstractTransportApiClient
     {
+        // TODO Fare product GET
+        // TODO Journey itinerary GET
+
         private ITokenComponent tokenComponent;
         private ITransportApiComponent transitApiComponent;
         private TransportApiClientSettings settings;

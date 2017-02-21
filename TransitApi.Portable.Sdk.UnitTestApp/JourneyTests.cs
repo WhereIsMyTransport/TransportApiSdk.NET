@@ -39,7 +39,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         [TestMethod]
         public async Task PostJourneyAsync_ValidInputs_IsSuccess()
         {
-            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude, time, defaultFareProducts, defaultOnlyAgencies, defaultOmitAgencies, defaultOnlyModes, defaultOmitModes, defaultTimeType, defaultProfile);
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude);
 
             Assert.IsTrue(results.IsSuccess);
         }

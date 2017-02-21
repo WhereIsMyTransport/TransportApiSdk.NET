@@ -37,7 +37,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            string timeIso8601 = string.Empty;
+            string timeIso8601 = null;
             if (time != null)
             {
                 timeIso8601 = time.Value.ToString("o");
