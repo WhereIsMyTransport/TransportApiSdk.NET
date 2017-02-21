@@ -22,6 +22,23 @@ var results = await defaultClient.GetAgenciesAsync(CancellationToken.None, null,
 // Do fancy things with the results.
 ```
 
+## Features
+
+The following end-points are available:
+
+* POST api/journeys
+* GET api/journeys/{id}
+* GET api/agencies
+* GET api/agencies/{id}
+* GET api/stops
+* GET api/stops/{id}
+* GET api/stops/{id}/timetables
+* GET api/lines
+* GET api/lines/{id}
+* GET api/lines/{id}/timetables
+* GET api/fareproducts
+* GET api/fareproducts/{id}
+
 ## Installation
 TransportApiSdk.NET is available on NuGet.
 
