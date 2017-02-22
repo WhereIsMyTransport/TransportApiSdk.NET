@@ -6,5 +6,6 @@
         public string Name { get; set; }
         public string Href { get; set; }
         public string Culture { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -11,7 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITokenComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransportApiComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Behaviour.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\GeoJsonType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\PickupDropOffType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Profile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\LegType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\TimeType.cs" />
@@ -37,6 +39,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\LineShape.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\LineTimetable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Location.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Omit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Only.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Route.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Segment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Shape.cs" />

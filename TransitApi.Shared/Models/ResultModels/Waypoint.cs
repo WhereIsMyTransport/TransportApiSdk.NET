@@ -1,4 +1,5 @@
 ﻿using System;
+using TransportApi.Sdk.Models.Enums;
 
 namespace TransportApi.Sdk.Models.ResultModels
 {
@@ -9,5 +10,7 @@ namespace TransportApi.Sdk.Models.ResultModels
         public Hail Hail { get; set; }
         public DateTime ArrivalTime { get; set; }
         public DateTime DepartureTime { get; set; }
+        public PickupDropOffType pickupType { get; set; }
+        public PickupDropOffType dropOffType { get; set; }
     }
 }

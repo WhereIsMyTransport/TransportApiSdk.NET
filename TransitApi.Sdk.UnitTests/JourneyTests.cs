@@ -22,7 +22,7 @@ namespace TransportApi.Sdk.UnitTests
         private static IEnumerable<string> defaultOmitAgencies = null;
         private static IEnumerable<string> defaultFareProducts = null;
         private static DateTime? defaultAt = null;
-        private static IEnumerable<TransportMode> defaultOnlyModes = null;
+        private static IEnumerable<TransportMode> defaultOnlyModes = new List<TransportMode>() { TransportMode.Bus };
         private static IEnumerable<TransportMode> defaultOmitModes = null;
         private static DateTime? defaultTime = DateTime.UtcNow; //.AddHours(16);
         private static TimeType defaultTimeType = TimeType.DepartAfter;
@@ -50,6 +50,29 @@ namespace TransportApi.Sdk.UnitTests
             var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude);
 
             Assert.IsTrue(results.IsSuccess);
+        }
+
+        [TestMethod]
+        public async Task PostJourneyItineraryAsync_ValidInputs_IsSuccess()
+        {
+            var results = await defaultClient.PostJourneyAsync(defaultCancellationToken, defaultStartLatitude, defaultStartLongitude, defaultEndLatitude, defaultEndLongitude);
+
+            Assert.IsTrue(results.IsSuccess);
+            Assert.IsNotNull(results.Data);
+
+            if (results.IsSuccess && results.Data != null)
+            {
+                Assert.IsNotNull(results.Data.Itineraries);
+                Assert.IsTrue(results.Data.Itineraries.Any());
+
+                if (results.Data.Itineraries != null && results.Data.Itineraries.Any())
+                {
+                    var itinerary = await defaultClient.GetJourneyItineraryAsync(defaultCancellationToken, results.Data.Id, results.Data.Itineraries.First().Id);
+
+                    Assert.IsTrue(itinerary.IsSuccess);
+                    Assert.IsNotNull(itinerary.Data);
+                }
+            }
         }
 
         [TestMethod]

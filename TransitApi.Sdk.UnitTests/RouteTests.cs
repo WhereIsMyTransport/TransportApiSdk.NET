@@ -34,7 +34,7 @@ namespace TransportApi.Sdk.UnitTests
 
             if (allLines.IsSuccess && allLines.Data != null)
             {
-                var results = await defaultClient.GetRoutesByLineAsync(defaultCancellationToken, "0503e0b5-49bd-443c-83b5-0556d8187e51", allLines.Data.First().Id);
+                var results = await defaultClient.GetRoutesByLineAsync(defaultCancellationToken, allLines.Data.First().Id);
 
                 Assert.IsTrue(results.IsSuccess);
                 Assert.IsNotNull(results.Data);

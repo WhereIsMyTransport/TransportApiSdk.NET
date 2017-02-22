@@ -14,5 +14,7 @@ namespace TransportApi.Sdk.Models.ResultModels
         public Profile Profile { get; set; }
         public int MaxItineraries { get; set; }
         public List<Itinerary> Itineraries { get; set; }
+        public Only Only { get; set; }
+        public Omit Omit { get; set; }
     }
 }

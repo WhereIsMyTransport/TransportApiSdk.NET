@@ -18,6 +18,7 @@ namespace TransportApi.Sdk.UnitTests
         });
 
         private static string defaultGautrainAgencyId = "edObkk6o-0WN3tNZBLqKPg";
+        private static string defaultGautrainMonthlyProductId = "58G-iTgU50eft5r9Aw190Q";
         private static CancellationToken defaultCancellationToken = CancellationToken.None;
         private static IEnumerable<string> defaultLimitAgencies = null;
         private static IEnumerable<string> defaultExcludeAgencies = null;

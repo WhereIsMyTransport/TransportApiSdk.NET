@@ -6,6 +6,7 @@ namespace TransportApi.Sdk.Models.ResultModels
     public class Leg
     {
         public LegType Type { get; set; }
+        public Behaviour Behaviour { get; set; }
         public Distance Distance { get; set; }
         public int Duration { get; set; }
         public Line Line { get; set; }

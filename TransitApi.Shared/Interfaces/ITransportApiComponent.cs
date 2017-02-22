@@ -13,6 +13,8 @@ namespace TransportApi.Sdk.Interfaces
 
         Task<TransportApiResult<Journey>> GetJourney(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null);
 
+        Task<TransportApiResult<Itinerary>> GetJourneyItinerary(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string journeyId, string itineraryId, DateTime? at, string exclude = null);
+
         Task<TransportApiResult<IEnumerable<Agency>>> GetAgencies(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, DateTime? at, double latitude, double longitude, string boundingBox, int radiusInMeters = -1, int limit = 100, int offset = 0, string exclude = null);
 
         Task<TransportApiResult<Agency>> GetAgency(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null);
