@@ -367,6 +367,16 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetFareTables(tokenComponent, settings, ct, fareProductId, null, limit, offset, exclude);
         }
 
+        /// <summary>
+        /// Gets the details of a Fare Product.
+        /// </summary>
+        /// <param name="id">Id of the Fare Product to get.</param>
+        /// <returns></returns>
+        public async Task<TransportApiResult<FareProduct>> GetFareProductAsync(CancellationToken ct, string id, string exclude = null)
+        {
+            return await transitApiComponent.GetFareProduct(tokenComponent, settings, ct, id, null, exclude);
+        }
+
         #endregion
     }
 }

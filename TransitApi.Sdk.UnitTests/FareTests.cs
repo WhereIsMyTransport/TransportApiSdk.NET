@@ -50,5 +50,13 @@ namespace TransportApi.Sdk.UnitTests
             Assert.IsTrue(results.IsSuccess);
             Assert.IsNotNull(results.Data);
         }
+
+        [TestMethod]
+        public async Task GetFareProductAsync_ValidInputs_IsSuccess()
+        {
+            var results = await defaultClient.GetFareProductAsync(defaultCancellationToken, defaultGautrainMonthlyProductId);
+
+            Assert.IsTrue(results.IsSuccess);
+        }
     }
 }

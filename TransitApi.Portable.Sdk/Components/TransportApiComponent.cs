@@ -1239,5 +1239,64 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
         }
+
+        public async Task<TransportApiResult<FareProduct>> GetFareProduct(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null)
+        {
+            var result = new TransportApiResult<FareProduct>();
+
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                result.Error = "FareProduct Id is required.";
+
+                return result;
+            }
+
+            var accessToken = await tokenComponent.GetAccessToken();
+
+            if (accessToken == null)
+            {
+                result.Error = tokenComponent.DefaultErrorMessage;
+
+                return result;
+            }
+
+            using (var client = Client(settings.Timeout))
+            {
+                var request = GetRequest($"fareproducts/{id}", accessToken);
+
+                if (at != null)
+                {
+                    request.AddParameter("at", at.Value.ToString("o"));
+                }
+                if (!string.IsNullOrWhiteSpace(exclude))
+                {
+                    request.AddParameter("exclude", exclude);
+                }
+
+                try
+                {
+                    IRestResponse<FareProduct> restResponse = await client.Execute<FareProduct>(request, ct);
+
+                    result.StatusCode = restResponse.StatusCode;
+
+                    if (restResponse.IsSuccess)
+                    {
+                        result.IsSuccess = true;
+                        result.Data = restResponse.Data;
+                    }
+                    else
+                    {
+                        result.Error = ((RestResponse)restResponse).Content;
+                    }
+                }
+                catch (Exception e)
+                {
+                    result.Error = e.Message;
+                }
+
+                return result;
+            }
+        }
+
     }
 }

@@ -41,5 +41,6 @@ namespace TransportApi.Sdk.Interfaces
 
         Task<TransportApiResult<IEnumerable<FareProduct>>> GetFareProducts(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, DateTime? at, int limit = 100, int offset = 0, string exclude = null);
 
+        Task<TransportApiResult<FareProduct>> GetFareProduct(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude);
     }
 }
