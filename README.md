@@ -20,7 +20,7 @@ TransportApiClient defaultClient = new TransportApiClient(new TransportApiClient
         });
 
 // Make an api call.
-var results = await defaultClient.GetAgenciesAsync(CancellationToken.None, null, null, DateTime.UtcNow);
+var results = await defaultClient.GetAgenciesAsync(CancellationToken.None);
 
 // Do fancy things with the results.
 ```
