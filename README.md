@@ -31,6 +31,7 @@ The following end-points are available:
 
 * POST api/journeys
 * GET api/journeys/{id}
+* GET api/journeys/{id}/itineraries
 * GET api/agencies
 * GET api/agencies/{id}
 * GET api/stops
