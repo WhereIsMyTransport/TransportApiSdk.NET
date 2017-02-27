@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/nuget/v/TransportApi.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Sdk/)
 [![Version](https://img.shields.io/nuget/v/TransportApi.Portable.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Portable.Sdk/)
 
-The unofficial .NET SDK for the [WhereIsMyTransport](https://www.whereismytransport.com) API. 
+The official .NET SDK for the [WhereIsMyTransport](https://www.whereismytransport.com) API. 
 
 Access to the platform is completely free, so for more information and to get credentials, just visit the [developer portal](https://developer.whereismytransport.com).
 
