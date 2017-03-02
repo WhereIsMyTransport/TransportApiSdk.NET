@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/nuget/v/TransportApi.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Sdk/)
 [![Version](https://img.shields.io/nuget/v/TransportApi.Portable.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Portable.Sdk/)
 
-The unofficial .NET SDK for the [WhereIsMyTransport](https://www.whereismytransport.com) API. 
+The official .NET SDK for the [WhereIsMyTransport](https://www.whereismytransport.com) API. 
 
 Access to the platform is completely free, so for more information and to get credentials, just visit the [developer portal](https://developer.whereismytransport.com).
 
@@ -20,7 +20,7 @@ TransportApiClient defaultClient = new TransportApiClient(new TransportApiClient
         });
 
 // Make an api call.
-var results = await defaultClient.GetAgenciesAsync(CancellationToken.None, null, null, DateTime.UtcNow);
+var results = await defaultClient.GetAgenciesAsync(CancellationToken.None);
 
 // Do fancy things with the results.
 ```
@@ -31,6 +31,7 @@ The following end-points are available:
 
 * POST api/journeys
 * GET api/journeys/{id}
+* GET api/journeys/{id}/itineraries
 * GET api/agencies
 * GET api/agencies/{id}
 * GET api/stops
