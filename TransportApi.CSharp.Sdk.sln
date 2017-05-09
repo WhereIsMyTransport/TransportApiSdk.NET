@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportApi.Portable.Sdk", "TransitApi.Portable.Sdk\TransportApi.Portable.Sdk.csproj", "{15CBC47E-4F68-4B3F-9F73-68097FAC8EEC}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportApi.Sdk.UnitTests", "TransitApi.Sdk.UnitTests\TransportApi.Sdk.UnitTests.csproj", "{91493C2E-92A5-40BF-A82C-8912B6119464}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TransportApi.Shared", "TransitApi.Shared\TransportApi.Shared.shproj", "{BF2A034C-9D80-4A80-9656-B49458AF588B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportApi.Sdk.NetCore", "TransportApi.Sdk.NetCore\TransportApi.Sdk.NetCore.csproj", "{094E5B08-079A-4FC4-95E7-49E22256FAD3}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -78,6 +80,18 @@ Global
 		{91493C2E-92A5-40BF-A82C-8912B6119464}.Release|ARM.Build.0 = Release|Any CPU
 		{91493C2E-92A5-40BF-A82C-8912B6119464}.Release|x86.ActiveCfg = Release|Any CPU
 		{91493C2E-92A5-40BF-A82C-8912B6119464}.Release|x86.Build.0 = Release|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Debug|ARM.Build.0 = Debug|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Debug|x86.Build.0 = Debug|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Release|ARM.ActiveCfg = Release|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Release|ARM.Build.0 = Release|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Release|x86.ActiveCfg = Release|Any CPU
+		{094E5B08-079A-4FC4-95E7-49E22256FAD3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
