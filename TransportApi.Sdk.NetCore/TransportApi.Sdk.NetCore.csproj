@@ -4,12 +4,24 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>TransportApi.Sdk.NetCore</AssemblyName>
     <RootNamespace>TransportApi.Sdk.NetCore</RootNamespace>
+    <PackageId>TransportApi.Sdk.NetCore</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>WhereIsMyTransport Ltd.</Authors>
+    <Description>.NET Core C# Sdk for the WhereIsMyTransport platform.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Copyright © 2017</Copyright>
+    <PackageTags>transport transit</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="IdentityModel" Version="2.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="RestSharp.NetCore" Version="105.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <Import Project="..\TransitApi.Shared\TransitApi.Shared.projitems" Label="Shared" />
