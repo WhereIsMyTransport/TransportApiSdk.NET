@@ -1,7 +1,7 @@
 # TransportApiSdk - WhereIsMyTransport API Client Library for .NET
 
 [![Version](https://img.shields.io/nuget/v/TransportApi.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Sdk/)
-[![Version](https://img.shields.io/nuget/v/TransportApi.Portable.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Portable.Sdk/)
+[![Version](https://img.shields.io/nuget/v/TransportApi.Portable.Sdk.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Portable.Sdk/) [![Version](https://img.shields.io/nuget/v/TransportApi.Sdk.NetCore.svg?style=flat)](https://www.nuget.org/packages/TransportApi.Sdk.NetCore/)
 
 The official .NET SDK for the [WhereIsMyTransport](https://www.whereismytransport.com) API. 
 
