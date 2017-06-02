@@ -11,6 +11,7 @@ using TransportApi.Sdk.Models.InputModels;
 using TransportApi.Sdk.Models.ResultModels;
 using static TransportApi.Sdk.NetCore.Components.RestSharpComponent;
 using TransportApi.Sdk.NetCore;
+using TransportApi.Shared.Models.Enums;
 
 namespace TransportApi.Sdk.NetCore.Components
 {
@@ -781,7 +782,7 @@ namespace TransportApi.Sdk.NetCore.Components
             return result;
         }
 
-        public async Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetable(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? earliestArrivalTime, DateTime? latestArrivalTime, DateTime? at, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetable(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? earliestArrivalTime, DateTime? latestArrivalTime, EventType? eventType, DateTime? at, int limit = 100, int offset = 0, string exclude = null)
         {
             var result = new TransportApiResult<IEnumerable<StopTimetable>>();
 
@@ -818,6 +819,10 @@ namespace TransportApi.Sdk.NetCore.Components
             if (latestArrivalTime != null)
             {
                 request.AddParameter("latestArrivalTime", latestArrivalTime.Value.ToString("o"));
+            }
+            if (eventType != null && eventType != EventType.Undefined)
+            {
+                request.AddParameter("eventType", eventType.Value.ToString("o"));
             }
             if (at != null)
             {

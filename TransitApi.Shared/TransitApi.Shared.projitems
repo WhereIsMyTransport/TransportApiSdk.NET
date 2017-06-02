@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITokenComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITransportApiComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Behaviour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\EventType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\GeoJsonType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\PickupDropOffType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Profile.cs" />
@@ -32,6 +33,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonLineString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonPoint.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Hail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Interval.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Itinerary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Journey.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Leg.cs" />
@@ -42,6 +44,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Omit.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Only.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Route.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\ScheduleInstance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Segment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Shape.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Stop.cs" />

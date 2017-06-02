@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using TransportApi.Sdk.Interfaces;
 using TransportApi.Sdk.Models.Enums;
 using TransportApi.Sdk.Models.ResultModels;
+using TransportApi.Shared.Models.Enums;
 
 namespace TransportApi.Sdk
 {
@@ -281,13 +282,14 @@ namespace TransportApi.Sdk
         /// <param name="id">Id of the Stop Timetable to get.</param>
         /// <param name="earliestArrivalTime">Optional earliest desired arrival date and time to include in the timetable.</param>
         /// <param name="latestArrivalTime">Optional latest desired arrival date and time to include in the timetable. Defaults to earliestArrivalTime plus 7 days.</param>
+        /// <param name="eventType">Optional filter whether only arrivals or departures are returned. By default returns either.</param>
         /// <param name="limit">Optional maximum number of entities to be returned. Default is 100.</param>
         /// <param name="offset">Optional offset of the first entity returned. Default is 0.</param>
         /// <param name="exclude">Optional. In order to reduce payload, it is possible to exclude certain objects or collections. https://developer.whereismytransport.com/documentation#excluding-data</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetableAsync(CancellationToken ct, string id, DateTime? earliestArrivalTime = null, DateTime? latestArrivalTime = null, int limit = 100, int offset = 0, string exclude = null)
+        public async Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetableAsync(CancellationToken ct, string id, DateTime? earliestArrivalTime = null, DateTime? latestArrivalTime = null, EventType? eventType = null, int limit = 100, int offset = 0, string exclude = null)
         {
-            return await transitApiComponent.GetStopTimetable(tokenComponent, settings, ct, id, earliestArrivalTime, latestArrivalTime, null, limit: limit, offset: offset, exclude: exclude);
+            return await transitApiComponent.GetStopTimetable(tokenComponent, settings, ct, id, earliestArrivalTime, latestArrivalTime, eventType, null, limit: limit, offset: offset, exclude: exclude);
         }
 
         /// <summary>
