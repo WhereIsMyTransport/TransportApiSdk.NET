@@ -7,7 +7,7 @@ namespace TransportApi.Sdk.NetCore
     public class TransportApiClient : AbstractTransportApiClient
     {
         public TransportApiClient(TransportApiClientSettings settings)
-            : base(settings, new TransportApiComponent(), new TokenComponent(settings.ClientId, settings.ClientSecret))
+            : base(settings, new TransportApiComponent(), new TokenComponent(settings.ClientId, settings.ClientSecret, settings.ClientScopes))
         {
             if (settings == null)
             {
