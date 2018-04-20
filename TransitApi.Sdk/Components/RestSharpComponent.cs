@@ -1,5 +1,6 @@
 ﻿using RestSharp;
 using System;
+using System.Net;
 using TransportApi.Sdk;
 
 namespace TransportApi.Sdk.Components
@@ -29,6 +30,8 @@ namespace TransportApi.Sdk.Components
 
         public static RestClient Client(TimeSpan timeout)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
             var client = new RestClient(TransportApiClientConnection.TransportApiBaseUri);
 
             client.Timeout = (int)timeout.TotalMilliseconds;
