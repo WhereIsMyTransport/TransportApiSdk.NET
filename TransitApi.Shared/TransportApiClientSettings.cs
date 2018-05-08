@@ -6,6 +6,7 @@ namespace TransportApi.Sdk
     {
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
+        public string UniqueContextId { get; set; }
 
         /// <summary>
         /// Additional scopes to request.
@@ -23,6 +24,7 @@ namespace TransportApi.Sdk
         {
             Timeout = TimeSpan.FromSeconds(30);
             ClientScopes = "transportapi:all";
+            UniqueContextId = Guid.NewGuid().ToString();
         }
     }
 }

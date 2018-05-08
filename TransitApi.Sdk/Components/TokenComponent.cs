@@ -1,5 +1,6 @@
 ﻿using IdentityModel.Client;
 using System;
+using System.Net;
 using System.Threading.Tasks;
 using TransportApi.Sdk;
 using TransportApi.Sdk.Interfaces;
@@ -53,6 +54,8 @@ namespace TransportApi.Sdk.Components
                     return token.AccessToken;
                 }
             }
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
             var client = new TokenClient(
                 TransportApiClientConnection.IdentityStsTokenUri.ToString(),
