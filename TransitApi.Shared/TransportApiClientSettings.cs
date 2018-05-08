@@ -8,6 +8,12 @@ namespace TransportApi.Sdk
         public string ClientSecret { get; set; }
 
         /// <summary>
+        /// Additional scopes to request.
+        /// Default is transportapi:all.
+        /// </summary>
+        public string ClientScopes { get; set; }
+
+        /// <summary>
         /// Maximum time a request can run before timing out.
         /// Default is 30seconds.
         /// </summary>
@@ -16,6 +22,7 @@ namespace TransportApi.Sdk
         public TransportApiClientSettings()
         {
             Timeout = TimeSpan.FromSeconds(30);
+            ClientScopes = "transportapi:all";
         }
     }
 }

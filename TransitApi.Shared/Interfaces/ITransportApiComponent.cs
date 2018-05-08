@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TransportApi.Sdk.Models.Enums;
 using TransportApi.Sdk.Models.ResultModels;
+using TransportApi.Shared.Models.Enums;
 
 namespace TransportApi.Sdk.Interfaces
 {
@@ -29,7 +30,7 @@ namespace TransportApi.Sdk.Interfaces
 
         Task<TransportApiResult<Line>> GetLine(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null);
 
-        Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetable(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? earliestArrivalTime, DateTime? latestArrivalTime, DateTime? at, int limit = 100, int offset = 0, string exclude = null);
+        Task<TransportApiResult<IEnumerable<StopTimetable>>> GetStopTimetable(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? earliestArrivalTime, DateTime? latestArrivalTime, EventType? eventType, DateTime? at, int limit = 100, int offset = 0, string exclude = null);
 
         Task<TransportApiResult<IEnumerable<LineTimetable>>> GetLineTimetable(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, string departureStopIdFilter, string arrivalStopIdFilter, DateTime? earliestDepartureTime, DateTime? latestDepartureTime, DateTime? at, int limit = 100, int offset = 0, string exclude = null);
 

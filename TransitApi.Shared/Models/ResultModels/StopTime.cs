@@ -4,6 +4,6 @@
     {
         public string ArrivalTime { get; set; }
         public string DepartureTime { get; set; }
-        public string StopId { get; set; }
+        public Stop Stop { get; set; }
     }
 }

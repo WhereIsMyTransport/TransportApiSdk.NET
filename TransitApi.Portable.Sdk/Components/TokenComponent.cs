@@ -11,6 +11,7 @@ namespace TransportApi.Sdk.Components
         private DateTime expiryTime;
         private string clientId;
         private string clientSecret;
+        private string clientScopes;
 
         public string DefaultErrorMessage
         {
@@ -20,7 +21,7 @@ namespace TransportApi.Sdk.Components
             }
         }
 
-        public TokenComponent(string clientId, string clientSecret)
+        public TokenComponent(string clientId, string clientSecret, string clientScopes)
         {
             if (string.IsNullOrWhiteSpace(clientId))
             {
@@ -32,8 +33,14 @@ namespace TransportApi.Sdk.Components
                 throw new ArgumentNullException(nameof(clientSecret), "ClientSecret cannot be null");
             }
 
+            if (string.IsNullOrWhiteSpace(clientScopes))
+            {
+                throw new ArgumentNullException(nameof(clientScopes), "ClientScopes cannot be null");
+            }
+
             this.clientId = clientId;
             this.clientSecret = clientSecret;
+            this.clientScopes = clientScopes;
         }
 
         public async Task<string> GetAccessToken()
@@ -51,11 +58,9 @@ namespace TransportApi.Sdk.Components
                 clientId,
                 clientSecret);
 
-            var scopes = "transportapi:all";
-
             try
             {
-                var tokenResponse = await client.RequestClientCredentialsAsync(scopes);
+                var tokenResponse = await client.RequestClientCredentialsAsync(clientScopes);
 
                 if (tokenResponse.IsError || tokenResponse.IsHttpError)
                 {
