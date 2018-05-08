@@ -5,5 +5,6 @@
         public string Designation { get; set; }
         public string Direction { get; set; }
         public string Headsign { get; set; }
+        public string TripKey { get; set; }
     }
 }
