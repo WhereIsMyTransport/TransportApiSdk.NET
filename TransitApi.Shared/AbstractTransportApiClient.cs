@@ -44,7 +44,6 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetAgencies(tokenComponent, settings, ct, onlyAgencies, omitAgencies, null, latitude, longitude, string.Empty, radiusInMeters, limit, offset, exclude);
         }
 
-
         /// <summary>
         /// Gets a list of all agencies in the system.
         /// </summary>
@@ -85,7 +84,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetAgency(tokenComponent, settings, ct, id, null, exclude);
         }
 
-        #endregion
+        #endregion Agencies
 
         #region Stops
 
@@ -164,7 +163,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetChildStops(tokenComponent, settings, ct, id, null, exclude);
         }
 
-        #endregion
+        #endregion Stops
 
         #region Lines
 
@@ -228,7 +227,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetLine(tokenComponent, settings, ct, id, null, exclude);
         }
 
-        #endregion
+        #endregion Lines
 
         #region Journeys
 
@@ -272,7 +271,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetJourneyItinerary(tokenComponent, settings, ct, journeyId, itineraryId, null, exclude);
         }
 
-        #endregion
+        #endregion Journeys
 
         #region Timetables
 
@@ -309,7 +308,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetLineTimetable(tokenComponent, settings, ct, id, departureStopIdFilter, arrivalStopIdFilter, earliestDepartureTime, latestDepartureTime, null, limit: limit, offset: offset, exclude: exclude);
         }
 
-        #endregion
+        #endregion Timetables
 
         #region Shapes
 
@@ -324,7 +323,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetLineShape(tokenComponent, settings, ct, id, null, exclude);
         }
 
-        #endregion
+        #endregion Shapes
 
         #region Routes
 
@@ -338,7 +337,7 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetRoutesByLine(tokenComponent, settings, ct, id, null, exclude);
         }
 
-        #endregion
+        #endregion Routes
 
         #region Fares
 
@@ -379,6 +378,6 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetFareProduct(tokenComponent, settings, ct, id, null, exclude);
         }
 
-        #endregion
+        #endregion Fares
     }
 }

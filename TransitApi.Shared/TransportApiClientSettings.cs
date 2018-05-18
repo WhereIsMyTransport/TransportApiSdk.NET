@@ -8,6 +8,8 @@ namespace TransportApi.Sdk
         public string ClientSecret { get; set; }
         public string UniqueContextId { get; set; }
 
+        public Uri EnvironmentUri { get; set; } = TransportApiClientConnection.TransportApiBaseUri;
+
         /// <summary>
         /// Additional scopes to request.
         /// Default is transportapi:all.
