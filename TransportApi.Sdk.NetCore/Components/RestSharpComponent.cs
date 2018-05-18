@@ -29,9 +29,9 @@ namespace TransportApi.Sdk.NetCore.Components
             return request;
         }
 
-        public static RestClient Client(TimeSpan timeout)
+        public static RestClient Client(TimeSpan timeout, Uri platformUri)
         {
-            var client = new RestClient(TransportApiClientConnection.TransportApiBaseUri);
+            var client = new RestClient(platformUri);
 
             client.Timeout = (int)timeout.TotalMilliseconds;
 

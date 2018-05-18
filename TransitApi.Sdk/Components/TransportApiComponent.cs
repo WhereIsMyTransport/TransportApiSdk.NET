@@ -72,7 +72,7 @@ namespace TransportApi.Sdk.Components
                 }
             };
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             string path = "journeys";
 
@@ -129,7 +129,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"journeys/{id}", token, settings.UniqueContextId);
 
@@ -193,7 +193,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"journeys/{journeyId}/itineraries/{itineraryId}", token, settings.UniqueContextId);
 
@@ -271,7 +271,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest("agencies", token, settings.UniqueContextId);
 
@@ -356,7 +356,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"agencies/{id}", token, settings.UniqueContextId);
 
@@ -434,7 +434,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest("stops", token, settings.UniqueContextId);
 
@@ -531,7 +531,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"stops/{id}", token, settings.UniqueContextId);
 
@@ -588,7 +588,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"stops/{id}/stops", token, settings.UniqueContextId);
 
@@ -651,7 +651,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest("lines", token, settings.UniqueContextId);
 
@@ -744,7 +744,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"lines/{id}", token, settings.UniqueContextId);
 
@@ -807,7 +807,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"stops/{id}/timetables", token, settings.UniqueContextId);
 
@@ -890,7 +890,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"lines/{id}/timetables", token, settings.UniqueContextId);
 
@@ -971,7 +971,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"lines/{id}/shape", token, settings.UniqueContextId);
 
@@ -1028,7 +1028,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"lines/{id}/routes", token, settings.UniqueContextId);
 
@@ -1091,7 +1091,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest("fareproducts", token, settings.UniqueContextId);
 
@@ -1164,7 +1164,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"fareproducts/{id}/faretables", token, settings.UniqueContextId);
 
@@ -1229,7 +1229,7 @@ namespace TransportApi.Sdk.Components
                 return result;
             }
 
-            var client = Client(settings.Timeout);
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
 
             var request = GetRequest($"fareproducts/{id}", token, settings.UniqueContextId);
 
@@ -1265,6 +1265,5 @@ namespace TransportApi.Sdk.Components
 
             return result;
         }
-
     }
 }
