@@ -7,7 +7,6 @@ namespace TransportApi.Sdk
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
         public string UniqueContextId { get; set; }
-
         public Uri EnvironmentUri { get; set; }
 
         /// <summary>
