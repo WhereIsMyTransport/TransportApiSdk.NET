@@ -8,7 +8,7 @@ namespace TransportApi.Sdk
         public string ClientSecret { get; set; }
         public string UniqueContextId { get; set; }
 
-        public Uri EnvironmentUri { get; set; } = TransportApiClientConnection.TransportApiBaseUri;
+        public Uri EnvironmentUri { get; set; }
 
         /// <summary>
         /// Additional scopes to request.
@@ -27,6 +27,7 @@ namespace TransportApi.Sdk
             Timeout = TimeSpan.FromSeconds(30);
             ClientScopes = "transportapi:all";
             UniqueContextId = Guid.NewGuid().ToString();
+            EnvironmentUri = TransportApiClientConnection.TransportApiBaseUri;
         }
     }
 }
