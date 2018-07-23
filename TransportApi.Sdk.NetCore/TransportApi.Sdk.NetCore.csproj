@@ -5,14 +5,14 @@
     <AssemblyName>TransportApi.Sdk.NetCore</AssemblyName>
     <RootNamespace>TransportApi.Sdk.NetCore</RootNamespace>
     <PackageId>TransportApi.Sdk.NetCore</PackageId>
-    <PackageVersion>1.3.1</PackageVersion>
+    <PackageVersion>1.4.0</PackageVersion>
     <Authors>WhereIsMyTransport Ltd.</Authors>
     <Description>.NET Core C# Sdk for the WhereIsMyTransport platform.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes></PackageReleaseNotes>
     <Copyright>Copyright © 2018</Copyright>
     <PackageTags>transport transit</PackageTags>
-    <Version>1.3.1</Version>
+    <Version>1.4.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/14315660</PackageIconUrl>
     <RepositoryUrl></RepositoryUrl>

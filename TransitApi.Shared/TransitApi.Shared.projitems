@@ -23,6 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\InputModels\JourneyOmitInputModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\InputModels\JourneyOnlyInputModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Agency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\AlternativeVehicle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Cost.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Direction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Distance.cs" />
