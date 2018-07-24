@@ -8,7 +8,7 @@ namespace TransportApi.Sdk.Models.ResultModels
         public string Direction { get; set; }
         public string Headsign { get; set; }
         public string TripId { get; set; }
-        public string TripNumber { get; set; }
+        public int TripNumber { get; set; }
         public List<AlternativeVehicle> AlternativeVehicles { get; set; }
     }
 }
