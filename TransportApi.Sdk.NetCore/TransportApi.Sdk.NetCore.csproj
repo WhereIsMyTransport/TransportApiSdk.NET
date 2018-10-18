@@ -1,28 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>TransportApi.Sdk.NetCore</AssemblyName>
     <RootNamespace>TransportApi.Sdk.NetCore</RootNamespace>
     <PackageId>TransportApi.Sdk.NetCore</PackageId>
-    <PackageVersion>1.4.1</PackageVersion>
+    <PackageVersion>1.5.0</PackageVersion>
     <Authors>WhereIsMyTransport Ltd.</Authors>
     <Description>.NET Core C# Sdk for the WhereIsMyTransport platform.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes></PackageReleaseNotes>
     <Copyright>Copyright © 2018</Copyright>
     <PackageTags>transport transit</PackageTags>
-    <Version>1.4.1</Version>
+    <Version>1.5.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/14315660</PackageIconUrl>
     <RepositoryUrl></RepositoryUrl>
     <PackageProjectUrl>https://github.com/chrisk1ng/TransportApiSdk.NET</PackageProjectUrl>
+    <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <FileVersion>1.5.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="IdentityModel" Version="2.8.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-    <PackageReference Include="RestSharp.NetCore" Version="105.2.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="RestSharp" Version="106.5.4" />
   </ItemGroup>
 
   <ItemGroup>
