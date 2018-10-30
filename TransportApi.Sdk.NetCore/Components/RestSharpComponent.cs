@@ -6,13 +6,14 @@ namespace TransportApi.Sdk.NetCore.Components
 {
     internal static class RestSharpComponent
     {
-        public static RestRequest GetRequest(string resource, string accessToken, string uniqueContextId)
+        public static RestRequest GetRequest(string resource, string accessToken, TransportApiClientSettings settings)
         {
             var request = new RestRequest(resource, Method.GET);
 
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Authorization", $"Bearer {accessToken}");
-            request.AddHeader("Unique-Context-Id", uniqueContextId);
+            request.AddHeader("Unique-Context-Id", settings.UniqueContextId);
+            request.AddParameter("enable-experimental", settings.EnableExperimentalFeatures);
 
             return request;
         }
