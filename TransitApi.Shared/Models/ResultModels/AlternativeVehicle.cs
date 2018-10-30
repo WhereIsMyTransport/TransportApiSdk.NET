@@ -1,5 +1,8 @@
 ﻿namespace TransportApi.Sdk.Models.ResultModels
 {
+    /// <summary>
+    /// Experimental Feature Model
+    /// </summary>
     public class AlternativeVehicle
     {
         public string TripId { get; set; }

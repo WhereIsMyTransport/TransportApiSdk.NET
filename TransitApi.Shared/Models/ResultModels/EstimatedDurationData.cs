@@ -4,6 +4,9 @@ using System.Text;
 
 namespace TransportApi.Sdk.Models.ResultModels
 {
+    /// <summary>
+    /// Experimental Feature Model
+    /// </summary>
     public class EstimatedDurationData
     {
         public double Headway { get; set; }
