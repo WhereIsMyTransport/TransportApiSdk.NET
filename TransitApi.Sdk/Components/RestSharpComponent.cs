@@ -14,7 +14,7 @@ namespace TransportApi.Sdk.Components
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Authorization", $"Bearer {accessToken}");
             request.AddHeader("Unique-Context-Id", settings.UniqueContextId);
-            request.AddParameter("enable-experimental", settings.EnableExperimentalFeatures);
+            request.AddParameter("Enable-Experimental", settings.EnableExperimentalFeatures);
 
             return request;
         }
