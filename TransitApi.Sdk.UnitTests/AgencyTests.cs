@@ -10,7 +10,7 @@ namespace TransportApi.Sdk.UnitTests
     [TestClass]
     public class AgencyTests
     {
-        TransportApiClient defaultClient = new TransportApiClient(new TransportApiClientSettings()
+        private TransportApiClient defaultClient = new TransportApiClient(new TransportApiClientSettings()
         {
             ClientId = ClientCredentials.ClientId,
             ClientSecret = ClientCredentials.ClientSecret

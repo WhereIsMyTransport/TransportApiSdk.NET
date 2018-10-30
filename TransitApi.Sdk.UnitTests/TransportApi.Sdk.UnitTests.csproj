@@ -56,7 +56,6 @@
     <Compile Include="JourneyTests.cs" />
     <Compile Include="LineTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RouteTests.cs" />
     <Compile Include="ShapeTests.cs" />
     <Compile Include="StopTests.cs" />
     <Compile Include="TimetableTests.cs" />
