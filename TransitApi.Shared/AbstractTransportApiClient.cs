@@ -325,20 +325,6 @@ namespace TransportApi.Sdk
 
         #endregion Shapes
 
-        #region Routes
-
-        /// <summary>
-        /// (EXPERIMENTAL FEATURE) Retrieves the routes for a line.
-        /// </summary>
-        /// <param name="id">Id of the Line.</param>
-        /// <returns></returns>
-        public async Task<TransportApiResult<IEnumerable<Route>>> GetRoutesByLineAsync(CancellationToken ct, string id, string exclude = null)
-        {
-            return await transitApiComponent.GetRoutesByLine(tokenComponent, settings, ct, id, null, exclude);
-        }
-
-        #endregion Routes
-
         #region Fares
 
         /// <summary>

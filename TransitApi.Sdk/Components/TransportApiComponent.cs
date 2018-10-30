@@ -1008,63 +1008,6 @@ namespace TransportApi.Sdk.Components
             return result;
         }
 
-        public async Task<TransportApiResult<IEnumerable<Route>>> GetRoutesByLine(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string id, DateTime? at, string exclude = null)
-        {
-            var result = new TransportApiResult<IEnumerable<Route>>();
-
-            if (string.IsNullOrWhiteSpace(id))
-            {
-                result.Error = "Line Id is required.";
-
-                return result;
-            }
-
-            var token = await tokenComponent.GetAccessToken();
-
-            if (token == null)
-            {
-                result.Error = tokenComponent.DefaultErrorMessage;
-
-                return result;
-            }
-
-            var client = Client(settings.Timeout, settings.EnvironmentUri);
-
-            var request = GetRequest($"lines/{id}/routes", token, settings);
-
-            if (at != null)
-            {
-                request.AddParameter("at", at.Value.ToString("o"));
-            }
-            if (!string.IsNullOrWhiteSpace(exclude))
-            {
-                request.AddParameter("exclude", exclude);
-            }
-
-            try
-            {
-                IRestResponse<List<Route>> restResponse = await client.ExecuteTaskAsync<List<Route>>(request, ct);
-
-                result.StatusCode = restResponse.StatusCode;
-
-                if (restResponse.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    result.IsSuccess = true;
-                    result.Data = restResponse.Data;
-                }
-                else
-                {
-                    result.Error = ((RestResponseBase)restResponse).Content;
-                }
-            }
-            catch (Exception e)
-            {
-                result.Error = e.Message;
-            }
-
-            return result;
-        }
-
         public async Task<TransportApiResult<IEnumerable<FareProduct>>> GetFareProducts(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, DateTime? at, int limit = 100, int offset = 0, string exclude = null)
         {
             var result = new TransportApiResult<IEnumerable<FareProduct>>();
