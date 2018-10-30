@@ -9,6 +9,8 @@ namespace TransportApi.Sdk
         public string UniqueContextId { get; set; }
         public Uri EnvironmentUri { get; set; }
 
+        public bool EnableExperimentalFeatures { get; set; }
+
         /// <summary>
         /// Additional scopes to request.
         /// Default is transportapi:all.
@@ -27,6 +29,7 @@ namespace TransportApi.Sdk
             ClientScopes = "transportapi:all";
             UniqueContextId = Guid.NewGuid().ToString();
             EnvironmentUri = TransportApiClientConnection.TransportApiBaseUri;
+            EnableExperimentalFeatures = false;
         }
     }
 }

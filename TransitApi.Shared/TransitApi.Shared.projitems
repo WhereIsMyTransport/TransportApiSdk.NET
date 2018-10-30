@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Cost.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Direction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Distance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\EstimatedDurationData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Fare.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareProduct.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareTable.cs" />

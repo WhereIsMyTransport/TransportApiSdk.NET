@@ -131,7 +131,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"journeys/{id}", token, settings.UniqueContextId);
+            var request = GetRequest($"journeys/{id}", token, settings);
 
             if (at != null)
             {
@@ -195,7 +195,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"journeys/{journeyId}/itineraries/{itineraryId}", token, settings.UniqueContextId);
+            var request = GetRequest($"journeys/{journeyId}/itineraries/{itineraryId}", token, settings);
 
             if (at != null)
             {
@@ -273,7 +273,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest("agencies", token, settings.UniqueContextId);
+            var request = GetRequest("agencies", token, settings);
 
             if (omitAgencies != null && omitAgencies.Any())
             {
@@ -358,7 +358,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"agencies/{id}", token, settings.UniqueContextId);
+            var request = GetRequest($"agencies/{id}", token, settings);
 
             if (at != null)
             {
@@ -436,7 +436,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest("stops", token, settings.UniqueContextId);
+            var request = GetRequest("stops", token, settings);
 
             if (omitAgencies != null && omitAgencies.Any())
             {
@@ -533,7 +533,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"stops/{id}", token, settings.UniqueContextId);
+            var request = GetRequest($"stops/{id}", token, settings);
 
             if (at != null)
             {
@@ -590,7 +590,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"stops/{id}/stops", token, settings.UniqueContextId);
+            var request = GetRequest($"stops/{id}/stops", token, settings);
 
             if (at != null)
             {
@@ -653,7 +653,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest("lines", token, settings.UniqueContextId);
+            var request = GetRequest("lines", token, settings);
 
             if (omitAgencies != null && omitAgencies.Any())
             {
@@ -746,7 +746,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"lines/{id}", token, settings.UniqueContextId);
+            var request = GetRequest($"lines/{id}", token, settings);
 
             if (at != null)
             {
@@ -809,7 +809,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"stops/{id}/timetables", token, settings.UniqueContextId);
+            var request = GetRequest($"stops/{id}/timetables", token, settings);
 
             if (earliestArrivalTime != null)
             {
@@ -892,7 +892,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"lines/{id}/timetables", token, settings.UniqueContextId);
+            var request = GetRequest($"lines/{id}/timetables", token, settings);
 
             if (earliestDepartureTime != null)
             {
@@ -973,7 +973,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"lines/{id}/shape", token, settings.UniqueContextId);
+            var request = GetRequest($"lines/{id}/shape", token, settings);
 
             if (at != null)
             {
@@ -1030,7 +1030,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"lines/{id}/routes", token, settings.UniqueContextId);
+            var request = GetRequest($"lines/{id}/routes", token, settings);
 
             if (at != null)
             {
@@ -1093,7 +1093,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest("fareproducts", token, settings.UniqueContextId);
+            var request = GetRequest("fareproducts", token, settings);
 
             if (omitAgencies != null && omitAgencies.Any())
             {
@@ -1166,7 +1166,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"fareproducts/{id}/faretables", token, settings.UniqueContextId);
+            var request = GetRequest($"fareproducts/{id}/faretables", token, settings);
 
             if (at != null)
             {
@@ -1231,7 +1231,7 @@ namespace TransportApi.Sdk.Components
 
             var client = Client(settings.Timeout, settings.EnvironmentUri);
 
-            var request = GetRequest($"fareproducts/{id}", token, settings.UniqueContextId);
+            var request = GetRequest($"fareproducts/{id}", token, settings);
 
             if (at != null)
             {
