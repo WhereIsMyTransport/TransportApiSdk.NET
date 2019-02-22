@@ -26,7 +26,7 @@ namespace TransportApi.Sdk
         public TransportApiClientSettings()
         {
             Timeout = TimeSpan.FromSeconds(30);
-            ClientScopes = "transportapi:all";
+            ClientScopes = "transportapi:all transportapi:trips:read";
             UniqueContextId = Guid.NewGuid().ToString();
             EnvironmentUri = TransportApiClientConnection.TransportApiBaseUri;
             EnableExperimentalFeatures = false;

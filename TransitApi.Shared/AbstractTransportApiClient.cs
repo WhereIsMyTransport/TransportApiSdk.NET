@@ -364,6 +364,11 @@ namespace TransportApi.Sdk
             return await transitApiComponent.GetFareProduct(tokenComponent, settings, ct, id, null, exclude);
         }
 
+        public async Task<TransportApiResult<Trip>> GetTripAsync(CancellationToken ct, string tripId, int tripNumber, DateTime? time = null, string exclude = null)
+        {
+            return await transitApiComponent.GetTrip(tokenComponent, settings, ct, tripId, tripNumber, time, exclude);
+        }
+
         #endregion Fares
     }
 }

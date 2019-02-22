@@ -32,6 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareProduct.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\FareTableEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Frequency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonLineString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\GeoJsonPoint.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Hail.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\StopTime.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\StopTimetable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\TransportApiResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Trip.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\TripTemplate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Vehicle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ResultModels\Waypoint.cs" />

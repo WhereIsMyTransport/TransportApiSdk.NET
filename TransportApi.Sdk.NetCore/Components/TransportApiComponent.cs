@@ -1209,5 +1209,62 @@ namespace TransportApi.Sdk.NetCore.Components
 
             return result;
         }
+
+        public async Task<TransportApiResult<Trip>> GetTrip(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, string tripId, int tripNumber, DateTime? at, string exclude = null)
+        {
+            var result = new TransportApiResult<Trip>();
+
+            if (string.IsNullOrWhiteSpace(tripId))
+            {
+                result.Error = "Trip Id is required.";
+
+                return result;
+            }
+
+            var token = await tokenComponent.GetAccessToken();
+
+            if (token == null)
+            {
+                result.Error = tokenComponent.DefaultErrorMessage;
+
+                return result;
+            }
+
+            var client = Client(settings.Timeout, settings.EnvironmentUri);
+
+            var request = GetRequest($"trips/{tripId}/{tripNumber}", token, settings);
+
+            if (at != null)
+            {
+                request.AddParameter("at", at.Value.ToString("o"));
+            }
+            if (!string.IsNullOrWhiteSpace(exclude))
+            {
+                request.AddParameter("exclude", exclude);
+            }
+
+            try
+            {
+                IRestResponse<Trip> restResponse = await client.ExecuteTaskAsync<Trip>(request, ct);
+
+                result.StatusCode = restResponse.StatusCode;
+
+                if (restResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    result.IsSuccess = true;
+                    result.Data = restResponse.Data;
+                }
+                else
+                {
+                    result.Error = ((RestResponseBase)restResponse).Content;
+                }
+            }
+            catch (Exception e)
+            {
+                result.Error = e.Message;
+            }
+
+            return result;
+        }
     }
 }
