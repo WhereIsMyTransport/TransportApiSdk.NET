@@ -27,7 +27,7 @@ namespace TransportApi.Portable.Sdk.UnitTestApp
         private static DateTime? time = DateTime.Now;
         private static DateTime? defaultTime = DateTime.UtcNow.AddHours(16);
         private static TimeType defaultTimeType = TimeType.DepartAfter;
-        private static Profile defaultProfile = Profile.ClosestToTime;
+        private static string defaultProfile = "ClosestToTime";
         private static double defaultStartLatitude = -25.747562;
         private static double defaultStartLongitude = 28.236323;
         private static double defaultEndLatitude = -26.195135;
