@@ -15,7 +15,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\EventType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\GeoJsonType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\PickupDropOffType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\Profile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\LegType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\TimeType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Enums\TransitMode.cs" />

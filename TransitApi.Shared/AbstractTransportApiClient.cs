@@ -243,7 +243,7 @@ namespace TransportApi.Sdk
         /// <param name="maxItineraries">Optional maximum number of itineraries to return. Valid values: 1 - 5.</param>
         /// <param name="exclude">Optional. In order to reduce payload, it is possible to exclude certain objects or collections. https://developer.whereismytransport.com/documentation#excluding-data</param>
         /// <returns></returns>
-        public async Task<TransportApiResult<Journey>> PostJourneyAsync(CancellationToken ct, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time = null, IEnumerable<string> fareProducts = null, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> onlyModes = null, IEnumerable<TransportMode> omitModes = null, TimeType timeType = TimeType.DepartAfter, Profile profile = Profile.ClosestToTime, int maxItineraries = 3, string exclude = null)
+        public async Task<TransportApiResult<Journey>> PostJourneyAsync(CancellationToken ct, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time = null, IEnumerable<string> fareProducts = null, IEnumerable<string> onlyAgencies = null, IEnumerable<string> omitAgencies = null, IEnumerable<TransportMode> onlyModes = null, IEnumerable<TransportMode> omitModes = null, TimeType timeType = TimeType.DepartAfter, string profile = "ClosestToTime", int maxItineraries = 3, string exclude = null)
         {
             return await transitApiComponent.PostJourney(tokenComponent, settings, ct, fareProducts, onlyAgencies, omitAgencies, onlyModes, omitModes, startLatitude, startLongitude, endLatitude, endLongitude, time, timeType, profile, maxItineraries, exclude);
         }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportApi.Portable.Sdk", "TransitApi.Portable.Sdk\TransportApi.Portable.Sdk.csproj", "{15CBC47E-4F68-4B3F-9F73-68097FAC8EEC}"
 EndProject
@@ -15,10 +15,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TransportApi.Shared", "Tran
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportApi.Sdk.NetCore", "TransportApi.Sdk.NetCore\TransportApi.Sdk.NetCore.csproj", "{094E5B08-079A-4FC4-95E7-49E22256FAD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportApi.Sdk.NetCore.UnitTests", "TransportApi.Sdk.NetCore.UnitTests\TransportApi.Sdk.NetCore.UnitTests.csproj", "{D256EF8A-361C-4C15-9214-404DAD77737D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportApi.Sdk.NetCore.UnitTests", "TransportApi.Sdk.NetCore.UnitTests\TransportApi.Sdk.NetCore.UnitTests.csproj", "{D256EF8A-361C-4C15-9214-404DAD77737D}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TransitApi.Shared\TransitApi.Shared.projitems*{094e5b08-079a-4fc4-95e7-49e22256fad3}*SharedItemsImports = 5
 		TransitApi.Shared\TransitApi.Shared.projitems*{15cbc47e-4f68-4b3f-9f73-68097fac8eec}*SharedItemsImports = 4
 		TransitApi.Shared\TransitApi.Shared.projitems*{16807c8d-d783-4b4e-9f7c-6d932647ad66}*SharedItemsImports = 4
 		TransitApi.Shared\TransitApi.Shared.projitems*{bf2a034c-9d80-4a80-9656-b49458af588b}*SharedItemsImports = 13
@@ -109,5 +110,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2E2719E-2D88-41CA-8257-B644817529A2}
 	EndGlobalSection
 EndGlobal
