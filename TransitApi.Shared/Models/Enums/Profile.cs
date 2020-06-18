@@ -3,6 +3,8 @@
     public enum Profile
     {
         ClosestToTime,
-        FewestTransfers
+        FewestTransfers,
+        Best,
+        CDMX
     }
 }
