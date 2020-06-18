@@ -19,7 +19,7 @@ namespace TransportApi.Sdk.NetCore.Components
     {
         private static int maxLimit = 30000;
 
-        public async Task<TransportApiResult<Journey>> PostJourney(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> fareProducts, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> onlyModes, IEnumerable<TransportMode> omitModes, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time, TimeType timeType = TimeType.DepartAfter, Profile profile = Profile.ClosestToTime, int maxItineraries = 3, string exclude = null)
+        public async Task<TransportApiResult<Journey>> PostJourney(ITokenComponent tokenComponent, TransportApiClientSettings settings, CancellationToken ct, IEnumerable<string> fareProducts, IEnumerable<string> onlyAgencies, IEnumerable<string> omitAgencies, IEnumerable<TransportMode> onlyModes, IEnumerable<TransportMode> omitModes, double startLatitude, double startLongitude, double endLatitude, double endLongitude, DateTime? time, TimeType timeType = TimeType.DepartAfter, string profile = "ClosestToTime", int maxItineraries = 3, string exclude = null)
         {
             var result = new TransportApiResult<Journey>();
 
@@ -51,7 +51,7 @@ namespace TransportApi.Sdk.NetCore.Components
                 TimeType = timeType.ToString(),
                 FareProducts = fareProducts,
                 MaxItineraries = maxItineraries,
-                Profile = profile.ToString(),
+                Profile = profile,
                 Omit = new JourneyOmitInputModel()
                 {
                     Agencies = omitAgencies,

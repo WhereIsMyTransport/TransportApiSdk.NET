@@ -11,7 +11,7 @@ namespace TransportApi.Sdk.Models.ResultModels
         public GeoJsonLineString Geometry { get; set; }
         public DateTime Time { get; set; }
         public TimeType TimeType { get; set; }
-        public Profile Profile { get; set; }
+        public string Profile { get; set; }
         public int MaxItineraries { get; set; }
         public List<Itinerary> Itineraries { get; set; }
         public Only Only { get; set; }

@@ -26,7 +26,7 @@ namespace TransportApi.Sdk.UnitTests
         private static IEnumerable<TransportMode> defaultOmitModes = null;
         private static DateTime? defaultTime = DateTime.UtcNow; //.AddHours(16);
         private static TimeType defaultTimeType = TimeType.DepartAfter;
-        private static Profile defaultProfile = Profile.FewestTransfers;
+        private static string defaultProfile = "FewestTransfers";
         /*private static double defaultStartLatitude = -25.747562;
         private static double defaultStartLongitude = 28.236323;
         private static double defaultEndLatitude = -26.195135;
